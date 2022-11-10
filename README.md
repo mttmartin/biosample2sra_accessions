@@ -33,3 +33,15 @@ Another example using pipes:
 ```
 $ cat my_accessions.txt | ./biosample2sra_accessions.py
 ```
+
+If a SRA record cannot be found for a given BioSample accession, the default behavior is to print a warning message and continue. If you want to filter or suppress these messages there are two options.
+
+The warnings are printed to standard error and the converted accessions are printed to standard out. So, they can be separated by redirecting them. For example by redirecting the converted accessions to a file:
+```
+$ cat my_accessions.txt | ./biosample2sra_accessions.py 1> converted_accessions.txt
+```
+
+Alternatively, there is a `--suppress-warnings` flag which will suppress all warning messages.
+```
+cat my_accessions.txt | ./biosample2sra_accessions.py --suppress-warnings
+```
