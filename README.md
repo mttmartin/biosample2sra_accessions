@@ -16,7 +16,7 @@ $ pip install -r requirements.txt
 
 ## Usage
 
-The program expects an input file (or data piped into stdin) containing BioSample accessions. Each line should contain one accession like:
+The program expects an input file (or data piped into stdin) containing BioSample accessions. It will print the corresponding SRA accessions to standard out. Each line should contain one accession like:
 
 ```
 SAMN30650114
@@ -26,7 +26,7 @@ SAMN30650017
 
 An example with an input file on the disk:
 ```
-$ ./biosample2sra_accessions.py --input-file my_accessions.txt
+$ ./biosample2sra_accessions.py --input-file my_biosample_accessions.txt > my_new_sra_accessions.txt
 ```
 
 Another example using pipes:
